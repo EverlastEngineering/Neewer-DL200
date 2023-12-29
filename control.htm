@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <title>General Tools ToolSmart TS-04 Multimeter</title>
+  <script src='ble-dl200.js'></script>
+</head>
+
+<body>
+  <!-- <div>chrome://flags/#enable-web-bluetooth-new-permissions-backend</div> -->
+  <div>
+      <div id="meter">
+      <div class="display">
+        <!--     <label aria-live="off">Reading: </label> -->
+        <div class="output">
+          <output class='value value-background'>8. 8. 8. 8. 8. 8</output>
+          <output class='value' id='value'>-. 0. 0. 0. 0. 0</output>
+          <output id='units'>mV</output>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button onClick='connect()'>connect</button>
+  <button onClick='disconnect()'>disconnect</button>
+</body>
+
+</html>
