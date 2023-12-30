@@ -15,6 +15,7 @@ const speed5 = new Uint8Array([0x90,0x01,0x05,0x01,0x00,0x05,0x00,0x00,0x9a])
 const goright = new Uint8Array([0x90,0x01,0x05,0x01,0x01,0xff,0xff,0x00,0x96])
 const goleft = new Uint8Array([0x90,0x01,0x05,0x01,0x01,0x00,0xff,0x00,0x96])
 const stopcommand = new Uint8Array([0x90,0x01,0x05,0x01,0x01,0xff,0x00,0x00,0x97])
+const modeforstop = new Uint8Array([0x90,0x06,0x05,0x01,0x00,0x00,0x00,0x00,0x9c])
 
 
 const log = console.log
@@ -96,6 +97,22 @@ async function gotostop() {
   await characteristic.writeValueWithoutResponse(stopcommand)
 }
 
+async function backforth() {
+  await characteristic.writeValueWithoutResponse(goleft)
+  await sleep(3000);
+  await characteristic.writeValueWithoutResponse(stopcommand)
+  await sleep(3000);
+  await characteristic.writeValueWithoutResponse(goright)
+  await sleep(3000);
+  await characteristic.writeValueWithoutResponse(stopcommand)
+  await sleep(3000);
+  backforth();
+ 
+}
+
+async function emergencystop() {
+  await characteristic.writeValueWithoutResponse(modeforstop)
+}
 
 let sleepSetTimeout_ctrl;
 
