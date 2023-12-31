@@ -23,7 +23,7 @@ const SLOWACCEL	 = new Uint8Array([0x90,0x01,0x05,0x01,0x02,0xff,0x00,0x00,0x98]
 const log = console.log
 
 let bleDolly;                        
-let sequenceactive = true;
+let sequenceactive = false;
 let characteristic = {};
 let _characteristic;
 
@@ -134,9 +134,8 @@ function setstopfor(time) {
 	log(`stopfor: ${stopfor}`)
 }
 
-let backforthsequenceactive = false;
 async function backforth(left) {
-	if (backforthsequenceactive) return;
+	if (sequenceactive) return;
 	sequenceactive = true;
 	while (sequenceactive) {
 		backforthsequenceactive = true;
@@ -152,17 +151,16 @@ async function backforth(left) {
 		await characteristic.writeValueWithoutResponse(STOPCOMMAND)
 		await sleep(stopfor);
 	}
-	backforthsequenceactive = false;
 }
 
 let superslowdelay = 150;
 async function superslow(left) {
-	sequenceactive = false;
-	await characteristic.writeValueWithoutResponse(SPEED1)
-	await sleep(250);
-	await characteristic.writeValueWithoutResponse(SLOWACCEL)
-	await sleep(250);
+	if (sequenceactive) return;
 	sequenceactive = true;
+	await characteristic.writeValueWithoutResponse(SPEED1)
+	await sleep(100);
+	await characteristic.writeValueWithoutResponse(SLOWACCEL)
+	await sleep(100);
 	let i = 0;
 	while (sequenceactive) {
 		if (left) await characteristic.writeValueWithoutResponse(ENABLEMOTIONTOLEFT)
@@ -181,19 +179,25 @@ async function setsuperslowdelay(delay) {
 	superslowdelay = delay
 }
 
-let movesmallestdelay = 100;
+let movesmallestdelay = 250;
 async function movesmallest(left) {
-	// sequenceactive = true;
+	if (sequenceactive) return;
+	sequenceactive = true;
 	await characteristic.writeValueWithoutResponse(SPEED1)
-	await sleep(250);
-	await characteristic.writeValueWithoutResponse(CONSTANTACCEL)
-	await sleep(250);
+	await sleep(50);
+	await characteristic.writeValueWithoutResponse(SLOWACCEL)
+	await sleep(50);
 	// while (sequenceactive) {
 		if (left) await characteristic.writeValueWithoutResponse(ENABLEMOTIONTOLEFT)
 		else await characteristic.writeValueWithoutResponse(ENABLEMOTIONTORIGHT)
 		await sleep(movesmallestdelay);
+		await characteristic.writeValueWithoutResponse(LIVEVIDEOMODE)
+		await sleep(50);
+		await characteristic.writeValueWithoutResponse(MANUALMODE)
+		await sleep(50);
 		await characteristic.writeValueWithoutResponse(STOPCOMMAND)
-		// await sleep(movesmallestdelay);
+		await sleep(50);
+		sequenceactive = false;
 	// }
 }
 

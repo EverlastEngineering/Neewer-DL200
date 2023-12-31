@@ -62,16 +62,20 @@
 			<button onClick='stopsequence()'>stop superslow</button>
 		<p>
 			[Delay factor <input onChange='setsuperslowdelay(this.value)' type="number" value="150" min="25" max="350" step="25" /> ms]
+		<p>
+			<i>Comma to go left, period to go right, space to stop.</i>
 		<hr>
-		Micromovements
+		Fixed duration movements
 		<p>
-		<i>Minus and plus keys trigger micromovements. The movement timing is not accurate or reliably.</i>
+			<i>Timed movements, also suitable for micromovements. The smallest movement is not terribly accurate and occasionally the little dude will just keep on going, so caution. The minimum is roughly equal to 0.4mm.</i>
 		<p>
-			<button onClick='movesmallest(true)'>move smallest amount left</button>
-			<button onClick='movesmallest(false)'>move smallest amount right</button>
+			<button onClick='movesmallest(true)'>fixed duration left</button>
+			<button onClick='movesmallest(false)'>fixed duration right</button>
+			[ In motion for <input onChange='setmovesmallestdelay(this.value)' type="number" value="425" min="125" max="999999" step="50" /> ms ]
+		<p>
+			<i>Minus and plus keys trigger micromovements.</i>
 		<p>
 			<!-- <button onClick='stopsequence()'>stop</button> -->
-			<!-- <input onChange='setmovesmallestdelay(this.value)' type="number" value="20" min="1" max="1000" step="1" /> -->
 		<hr>
 		Tests
 		<p><i>Attempt to move the device for one second in effort to compare the distance travelled at speed 1 vs super slow speed.</i>
