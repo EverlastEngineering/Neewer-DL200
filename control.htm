@@ -2,28 +2,87 @@
 <html lang='en'>
 
 <head>
-  <meta charset='utf-8'>
-  <title>Neewer DL-200</title>
-  <script src='ble-dl200.js'></script>
+	<meta charset='utf-8'>
+	<title>Neewer DL-200</title>
+	<script src='ble-dl200.js'></script>
 </head>
 
 <body>
-  <!-- <div>chrome://flags/#enable-web-bluetooth-new-permissions-backend</div> -->
-  <div>
-      <div id="meter">
-      <div class="display">
-    </div>
-  </div>
-
-  <button onClick='connect()'>connect</button>
-  <button onClick='disconnect()'>disconnect</button>
-<p>
-  <button onClick='gototheright()'>go right</button>
-  <button onClick='gototheleft()'>go left</button>
-  <button onClick='gotostop()'>stop</button>
-<p>
-  <button onClick='backforth()'>back forth</button>
-  <button onClick='emergencystop()'>stop</button>
+	<div>
+		<b>Neewer DL-200 Bluetooth Control</b>
+		<hr>
+		Connection
+		<p>
+			<button onClick='connect()' id="connect">c<u>o</u>nnect</button>
+			<button onClick='disconnect()'><u>d</u>isconnect</button>
+			<button onClick='emergencystop()'><b><u>e</u>mergency stop</b></button>
+			<p>
+				<i>The speed will rapidly change from 5 to 1 to show connection is successful.</i>
+		<hr>
+		Main Movements
+		<p>
+			<button onmousedown='gototheleft()' onmouseup='movementrelease()' ontouchend='movementrelease()'>go left</button> 
+			<button onmousedown='gototheright()' onmouseup='movementrelease()' ontouchend='movementrelease()'>go right</button>
+			<button onClick='gotostop()'>stop</button>
+			<input onChange='changemomentary(this.checked)' checked type="checkbox" id="momentary" name="momentary" value=true> <u>m</u>omentary
+		<p>
+			<i>Arrow keys or numpad to move, space to stop</i>
+		<hr>
+		Speed and Acceleration Settings
+		<p>
+			<button onClick='setspeed(1)'>speed <u>1</u></button>
+			<button onClick='setspeed(2)'>speed <u>2</u></button>
+			<button onClick='setspeed(3)'>speed <u>3</u></button>
+			<button onClick='setspeed(4)'>speed <u>4</u></button>
+			<button onClick='setspeed(5)'>speed <u>5</u></button><br>
+		<p>
+			<button onClick='slowaccel()'><u>s</u>low acceleration</button>
+			<button onClick='constantaccel()'><u>c</u>onstant acceleration</button>
+			<br>
+		<br><br>
+			<b><i>Special Functions</i></b>
+		<hr>
+		Ping Pong
+		<p>
+		<i>Move the dolly back and forth. 'End sequence' gracefully finishes the remaining movement. A 'Stop' command will end the movement early.</i>
+		<p>
+			<button onClick='backforth(true)'><u>l</u>eft then right repeatedly</button>
+			<button onClick='backforth(false)'><u>r</u>ight then left repeatedly</button>
+			<button id='stop' onClick='stopsequence()'>e<u>n</u>d sequence</button>
+		<p>
+			[Travel for <input onChange='settravelfor(this.value)' type="number" value="4000" min="0" max="999999" step="500" /> ms] 
+			[Stop for <input onChange='setstopfor(this.value)' type="number" value="4000" min="0" max="999999" step="500" /> ms] 
+		<hr>
+		Super slowmode
+		<p>
+		<i>Uses the slow acceleration setting and a repeated on/off with delay to achieve a very slow movement.</i> 
+		<p>
+			<button onClick='superslow(true)'>super slow left</button>
+			<button onClick='superslow(false)'>super slow right</button>
+			<button onClick='stopsequence()'>stop superslow</button>
+		<p>
+			[Delay factor <input onChange='setsuperslowdelay(this.value)' type="number" value="150" min="25" max="350" step="25" /> ms]
+		<hr>
+		Micromovements
+		<p>
+		<i>Minus and plus keys trigger micromovements. The movement timing is not accurate or reliably.</i>
+		<p>
+			<button onClick='movesmallest(true)'>move smallest amount left</button>
+			<button onClick='movesmallest(false)'>move smallest amount right</button>
+		<p>
+			<!-- <button onClick='stopsequence()'>stop</button> -->
+			<!-- <input onChange='setmovesmallestdelay(this.value)' type="number" value="20" min="1" max="1000" step="1" /> -->
+		<hr>
+		Tests
+		<p><i>Attempt to move the device for one second in effort to compare the distance travelled at speed 1 vs super slow speed.</i>
+		<p>
+			<button onClick='testspeed1(true)'>test speed 1 left</button> 
+			<button onClick='testspeed1(false)'>test speed 1 right</button>
+		<p>
+			<button onClick='testslowspeed(true)'>test super slow left</button>
+			<button onClick='testslowspeed(false)'>test super slow right</button>
+		<p>
+			
 </body>
 
 </html>
