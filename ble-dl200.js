@@ -94,9 +94,10 @@ characteristic.writeValueWithoutResponse = async function(value) {
 		try {
 			await _characteristic.writeValueWithoutResponse(value);
 		}
-		catch(e)
-		{log(`command failed: ${e}`)}
-		stopsequence();
+		catch(e) {
+			log(`command failed: ${e}`)
+			stopsequence();
+		}
 	}
 	else {
 		log('unable to comply: likely not connected')
@@ -133,21 +134,25 @@ function setstopfor(time) {
 	log(`stopfor: ${stopfor}`)
 }
 
+let backforthsequenceactive = false;
 async function backforth(left) {
+	if (backforthsequenceactive) return;
 	sequenceactive = true;
 	while (sequenceactive) {
+		backforthsequenceactive = true;
 		if (left) await characteristic.writeValueWithoutResponse(ENABLEMOTIONTOLEFT)
 		else await characteristic.writeValueWithoutResponse(ENABLEMOTIONTORIGHT)
 		await sleep(travelfor);
 		await characteristic.writeValueWithoutResponse(STOPCOMMAND)
 		await sleep(stopfor);
-		if (!sequenceactive) return;
+		if (!sequenceactive) break;
 		if (left) await characteristic.writeValueWithoutResponse(ENABLEMOTIONTORIGHT)
 		else await characteristic.writeValueWithoutResponse(ENABLEMOTIONTOLEFT)
 		await sleep(travelfor);
 		await characteristic.writeValueWithoutResponse(STOPCOMMAND)
 		await sleep(stopfor);
 	}
+	backforthsequenceactive = false;
 }
 
 let superslowdelay = 150;
