@@ -480,9 +480,9 @@ window.onunload = async function () {
 	emergencystop();
 }
 
-window.onload = function () {
+setTimeout(function() {
 	uidisablement(disabled=true); // my distain for double negatives is stronger than my distain for the fact that this works. actually, i rather like this <--
-}
+},1)
 
 async function uidisablement(disabled) {
 	var buttons = [...document.querySelectorAll("button"), ...document.querySelectorAll("input")]; 
