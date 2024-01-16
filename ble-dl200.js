@@ -534,7 +534,8 @@ async function uidisablement(disabled) {
 		let button = buttons[i]
 		button.disabled = disabled;
 	}
-	document.getElementById("connect").disabled = !disabled;
+	let el = document.getElementById("connect")
+	el && (el.disabled = !disabled);
 }
 
 function calculateCRC16(data,poly,init,finalXOR) {

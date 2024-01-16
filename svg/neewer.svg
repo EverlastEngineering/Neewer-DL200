@@ -1814,9 +1814,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.92348146"
-     inkscape:cx="72.551538"
-     inkscape:cy="86.628702"
+     inkscape:zoom="1.8469629"
+     inkscape:cx="375.48128"
+     inkscape:cy="487.82788"
      inkscape:window-width="2048"
      inkscape:window-height="1019"
      inkscape:window-x="0"
@@ -2336,7 +2336,7 @@
          transform="rotate(-16.787916,164.19195,366.93799)"
          inkscape:label="shinybutton"
          sodipodi:insensitive="true"><circle
-           style="display:inline;opacity:1;fill:url(#meshgradient2726);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           style="display:none;opacity:1;fill:url(#meshgradient2726);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
            id="path23-4"
            cy="366.92221"
            cx="164.19543"
@@ -2391,7 +2391,7 @@
          transform="rotate(-16.787916,164.19195,366.93799)"
          inkscape:label="shinybutton"
          sodipodi:insensitive="true"><circle
-           style="display:inline;opacity:1;fill:url(#meshgradient2181);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           style="display:none;opacity:1;fill:url(#meshgradient2181);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
            id="circle2824"
            cy="366.92221"
            cx="164.19543"
@@ -2442,11 +2442,11 @@
          inkscape:label="buttonring"
          r="12.046803" /><g
          id="g2718"
-         style="opacity:0.651"
+         style="display:inline;opacity:0.651"
          transform="rotate(-16.787916,164.19195,366.93799)"
          inkscape:label="shinybutton"
          sodipodi:insensitive="true"><circle
-           style="display:inline;opacity:1;fill:url(#meshgradient2827);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           style="display:none;opacity:1;fill:url(#meshgradient2827);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
            id="circle2717"
            cy="366.92221"
            cx="164.19543"
@@ -2502,7 +2502,7 @@
          transform="rotate(-16.787916,164.19195,366.93799)"
          inkscape:label="shinybutton"
          sodipodi:insensitive="true"><circle
-           style="display:inline;opacity:1;fill:url(#meshgradient2794);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           style="display:none;opacity:1;fill:url(#meshgradient2794);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
            id="circle2720"
            cy="366.92221"
            cx="164.19543"
@@ -2557,7 +2557,7 @@
          transform="rotate(-16.787916,164.19195,366.93799)"
          inkscape:label="shinybutton"
          sodipodi:insensitive="true"><circle
-           style="display:inline;opacity:1;fill:url(#meshgradient2808);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+           style="display:none;opacity:1;fill:url(#meshgradient2808);fill-opacity:1;stroke:none;stroke-width:4.12737;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
            id="circle2723"
            cy="366.92221"
            cx="164.19543"
@@ -2774,9 +2774,9 @@
            id="tspan16">Battery 95%</tspan></text></g><g
        id="g4"
        inkscape:label="SPEED Label"
-       transform="rotate(-2.4274187,13494.693,-21152.333)"><path
+       transform="rotate(-2.4274187,13619.655,-20715.047)"><path
          id="rect4"
-         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.04046;stroke-opacity:0.836582;paint-order:markers fill stroke"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.04046;stroke-opacity:1;paint-order:markers fill stroke"
          d="m 49.783733,139.66101 h 88.579247 v 21.57736 l -86.822395,0.13186 z"
          sodipodi:nodetypes="ccccc" /><text
          xml:space="preserve"

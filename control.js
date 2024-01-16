@@ -75,7 +75,7 @@ function animator(){
 function moveSection(idStr, xOffset, yOffset) {
 	var domElemnt = document.getElementById(idStr);
 		if (domElemnt) {
-			let coors = domElemnt.getBoundingClientRect();
+			// let coors = domElemnt.getBoundingClientRect();
 			// let a = coors.width + coors.left;
 			// console.log(coors.x, coors.y, coors.width, coors.height);
 			let pos = {
