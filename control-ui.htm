@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang='en'>
+<style>
+	svg text {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+</style>
 
 <head>
 	<meta charset='utf-8'>
@@ -11,7 +19,8 @@
 
 <body>
 	<svg src="./svg/neewer.svg" id="svg"></svg>
-			
+	<button onClick='updateAcceleration(accelerationStates[0]);slowaccel();'><u>s</u>low acceleration</button>
+	<button onClick='updateAcceleration(accelerationStates[1]);constantaccel();'><u>c</u>onstant acceleration</button>
 </body>
 
 </html>
