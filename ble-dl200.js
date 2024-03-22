@@ -493,15 +493,15 @@ window.onunload = async function () {
 
 setTimeout(function() {
 	crcsetup();
-	uidisablement(true); // my distain for double negatives is stronger than my distain for the fact that this works. actually, i rather like this <--
-	let s = performance.now();
-	log(`time: ${s}`)
-	checkDJICommand('0x551504a90204e18c00040c0700000000008100')
-	let e = performance.now();
-	log(`time: ${e-s}`)
-	checkDJICommand('0x551504a90204e18c00040c0733000000008100')
-	let a = performance.now();
-	log(`time: ${a-e}`)
+	// uidisablement(true); // my distain for double negatives is stronger than my distain for the fact that this works. actually, i rather like this <--
+	// let s = performance.now();
+	// log(`time: ${s}`)
+	// checkDJICommand('0x551504a90204e18c00040c0700000000008100')
+	// let e = performance.now();
+	// log(`time: ${e-s}`)
+	// checkDJICommand('0x551504a90204e18c00040c0733000000008100')
+	// let a = performance.now();
+	// log(`time: ${a-e}`)
 },200)
 
 let crc;
